@@ -46,7 +46,7 @@ The `2017sales` table have the following features:
 
 <br>
 
-#### **`grocery_sales`**
+#### **`2017sales`**
 - `"Invoice No"` - an unique Invoice Number for the sale
 - `"Date of Sale"` - date of the sale
 - `"Month of Sale"` - the month number of the year
@@ -56,27 +56,26 @@ The `2017sales` table have the following features:
 - `"Insurance Type"` - the Insurance type of the insurance policy sale
 - `"State Type"` - combination of the state and the insurance type of the sale
 
-The `extra_data.parquet` file contains complementary data:
+The `VariableCostPct` table contains variable cost percentage figures for each combination of state and insurance type:
 
-#### **`extra_data.parquet`**
-- `"IsHoliday"` - Whether the week contains a public holiday - 1 if yes, 0 if no.
-- `"Temperature"` - Temperature on the day of sale
-- `"Fuel_Price"` - Cost of fuel in the region
-- `"CPI"` – Prevailing consumer price index
-- `"Unemployment"` - The prevailing unemployment rate
-- `"MarkDown1"`, `"MarkDown2"`, `"MarkDown3"`, `"MarkDown4"` - number of promotional markdowns
-- `"Dept"` - Department Number in each store
-- `"Size"` - size of the store
-- `"Type"` - type of the store (depends on `Size` column)
+#### **`VariableCostPct`**
+- `"State Type"` - combination of the state and the insurance type
+- `"Variable Cost Percent"` - the variable cost percentage for each state and insurance type
 
-The two files need to be merged and manipulated. The transformed DataFrame can then be stored as the `clean_data` variable containing the following columns:
-- `"Store_ID"`
-- `"Month"`
-- `"Dept"`
-- `"IsHoliday"`
-- `"Weekly_Sales"`
-- `"CPI"`
-- `"Unemployment"`
+
+The two tables are merged and manipulated. The transformed Dataset are stored as the `SalesMerged` table containing the following columns:
+- `"Invoice No"` 
+- `"Date of Sale"` 
+- `"Month of Sale"` 
+- `"Region"` 
+- `"State"` 
+- `"Salesperson"` 
+- `"Insurance Type"` 
+- `"State Type"`
+- `"Variable Cost Percent"`
+- `"Variable Cost"`
+- `"Contribution Margin"`
+- `"Contribution Margin Ratio"`
 
 After merging and cleaning the data, the monthly sales of Walmart are stored  as the `agg_data` variable that look like:
 
