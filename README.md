@@ -10,7 +10,7 @@
   <p> Analysis for financial health based on Contribution Margin Ratio across various regions and states in USA </p>
     
   <a href="#">
-    <img src="https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/Overview.PNG" alt="Banner" width="800">
+    <img src="https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/Overview.PNG" alt="Banner" width="960">
   </a>
 </div>
 <br>
