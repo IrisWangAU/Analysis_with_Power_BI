@@ -1,5 +1,3 @@
-  
-
 
 <div align="center">
   
@@ -33,25 +31,30 @@
 <a name="introduction"></a>
 ## 🔬 Project Overview 
 
-Walmart is the biggest retail store in the United States. Just like others, they have been expanding their e-commerce part of the business. By the end of 2022, e-commerce represented a roaring $80 billion in sales, which is 13% of total sales of Walmart. One of the main factors that affects their sales is public holidays, like the Super Bowl, Labour Day, Thanksgiving, and Christmas. 
+In 2017, KAT Insurance marked a significant achievement by exceeding a total sales figure of 40 million. To offer a comprehensive perspective of the company's financial health, the project analyzed these sales numbers in greater detail, categorizing them by region, state and insurance type. Alongside total sales, this report also delves into the company's profitability and financial ratios (Contribution Margin Ratio), thereby providing a holistic overview of the business's financial wellbeing.
 
-In this project, I build a ETL data pipeline for the analysis of supply and demand around the holidays, along with conducting a preliminary analysis of the data.
+Furthermore, the project also provided an analysis of the key influences for KAT's Contribution Margin and Contribution Margin Ratio to further reveal the sales performance.
+
 
 <br>
 
 ### 💾 Dataset
 
-There are two data sources: grocery sales and complementary data.
+The original dataset comprises 64,544 insurance policy sales records from 2017, spanning 6 regions, 49 states within the USA, and includes five types of insurance: Professional, Auto, Home, Disability, and Life.  In response to these queries, the total sales is classified by region, state and insurance type, thereafter delving into their patterns and rankings for insights. The primary data is saved in an Excel file, including 2 tables.
 
-The `grocery_sales` table have the following features:
+The `2017sales` table have the following features:
 
 <br>
 
 #### **`grocery_sales`**
-- `"index"` - unique ID of the row
-- `"Store_ID"` - the store number
-- `"Date"` - the week of sales
-- `"Weekly_Sales"` - sales for the given store
+- `"Invoice No"` - an unique Invoice Number for the sale
+- `"Date of Sale"` - date of the sale
+- `"Month of Sale"` - the month number of the year
+- `"Region"` - the Region of the insurance policy sale
+- `"State"` - the State of the insurance policy sale
+- `"Salesperson"` - the Salesperson of the insurance policy sale
+- `"Insurance Type"` - the Insurance type of the insurance policy sale
+- `"State Type"` - combination of the state and the insurance type of the sale
 
 The `extra_data.parquet` file contains complementary data:
 
