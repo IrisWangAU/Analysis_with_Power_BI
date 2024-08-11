@@ -20,9 +20,9 @@
 1. [Introduction](#introduction)
 2. [Key Insights](#key-insights)
 3. [Project Architecture](#project-architecture)  
-  3.1. [Data Cleaning](#data-extraction)  
+  3.1. [Data Ingestion](#data-ingest)  
   3.2. [Data Transformation](#data-transformation)  
-  3.3. [Data Analysis](#data-loading)  
+  3.3. [Data Analysis](#data-analysis)  
 5. [Technology used](#technology)
 6. [Contact](#contact)
 
@@ -63,20 +63,6 @@ The `VariableCostPct` table contains variable cost percentage figures for each c
 - `"Variable Cost Percent"` - the variable cost percentage for each state and insurance type
 
 
-The two tables are merged and manipulated. The transformed Dataset are stored as the `SalesMerged` table containing the following columns:
-- `"Invoice No"` 
-- `"Date of Sale"` 
-- `"Month of Sale"` 
-- `"Region"` 
-- `"State"` 
-- `"Salesperson"` 
-- `"Insurance Type"` 
-- `"State Type"`
-- `"Variable Cost Percent"`
-- `"Variable Cost"`
-- `"Contribution Margin"`
-- `"Contribution Margin Ratio"`
-
 <br>
 
 ### 🎯 Project Goals
@@ -92,22 +78,34 @@ The two tables are merged and manipulated. The transformed Dataset are stored as
 - 💸 **Total Sales**
   - In 2017, KAT Insurance generated a total revenue of $40.65 million across all states.
   - August led the months with the highest revenue of $3.49 million, followed by October ($3.46 million) and December ($3.42 million). February, September, and April fell below the average monthly revenue, with $3.2 million, $3.26 million, and $3.33 million, respectively.
+  ![MonthlySales]()
+
   - Among insurance types, Professional Insurance generated the most revenue at $16.54 million (41% of total revenue), followed by Auto Insurance at $7.97 million (20%). Life Insurance contributed the least, with $2.89 million (7% of total revenue)
+  ![InsuranceSales]()
+
   - New Jersey (NJ) recorded the highest sales at $1,021,569.45, while Massachusetts (MA) had the lowest at $707,795.11.
   - The average state sales were around $829K. The top 5 states were NJ, NY, DC, OH, and VA, while nine states fell below the $775K benchmark, needing immediate attention.
+  ![StateAnalysis]()
 
 
 - 🕵️ **Contribution Margin (CM) and Contribution Margin Ratio (CMR)**
   > The Contribution Margin (CM) measures profit by subtracting variable costs from revenue (CM = Sales - Sales * Variable Cost Percent).
   > The Contribution Margin Ratio (CMR) reflects how effectively sales convert to profit (CMR = CM / Sales).
+
   - In 2017, the average CMR across regions and months was around 0.73, indicating healthy finances. The Northeast region led with a profit of $8.7 million.
+  ![regionalCM]()
+
+
   - Life Insurance, despite generating the least revenue, had the highest CMR at 0.89, making it the most profitable policy for KAT. Conversely, Auto Insurance, with the second-highest sales, had a lower CMR of 0.52, indicating only 52% of sales converted to profit.
+  ![InsuranceType]()
 
 
 
 - 🕵️ **Key Influencers for CM and CMR**
   - Key factors increasing CM include Insurance Type, Salesperson, and Region. For example, Professional Insurance increased CM by an average of $652, Salesperson Matt by $101.9, and the Northeast region by $87.97. The Decomposition Tree confirmed that the highest CM in 2017 was from Matt selling Professional Insurance in the Northeast.
+  ![CM]()
   - Key influencers for CMR include Insurance Type and State. States like NM, IN, VA, ND, and SD, and insurance types like Life, Home, and Professional, significantly boosted CMR. The Decomposition Tree showed the most profitable sale was Life Insurance in Indiana.
+  ![CMR]()
 
 
 <br>
@@ -117,67 +115,48 @@ The two tables are merged and manipulated. The transformed Dataset are stored as
 
 <br>
 
-<a name="data-extraction"></a>
-### 📤 Data Ingestion
-- Extract Data from source file
-
-![extract](https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/Extract.PNG)
+<a name="data-ingest"></a>
+### 📤 Data Ingesting and Data Cleaning
+- Loaded data into Power BI from Excel tables.
 
 <br>
 
 <a name="data-transformation"></a>
 ### ⚙️ Data Transformation
 
-- Fill NAs in Date, CPI, Unemployment with the last non-null values.
-- Drop any rows with missing values in weekly sales and keep only rows with sales revenue above 10K.
-- Create a new column for Month from the Date Column.
-- Create a new Data Frame for Average Weekly Sales by Month using aggregation.
+- Verified and corrected data types for each column.
+- Fixed typographical errors in the Region and Insurance Type fields.
+- Created a new Date dimension table.
+- Integrated 'Variable Cost Percentages' from the 'VariableCostPct' worksheet with the 'MainData' worksheet using the shared 'State Type' variable.
+- Added new columns for Variable Cost, Contribution Margin, and Contribution Margin Ratio.
 
-![Transform](https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/Transform.PNG)
+The two original tables were merged and manipulated. The transformed Dataset is stored as the `SalesMerged` table containing the following columns:
 
-<br>
-
-<a name="data-loading"></a>
-
-### 📥 Data Loading
-
-- Save the Cleaned and Aggregated Data into CSV files
-
-![SaveData](https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/savedata.PNG)
+![sampleCleanDataTable]()
 
 <br>
 
-<a name="pipeline-validate"></a>
+<a name="data-analysis"></a>
 
-### ⚙️ Pipeline Testing
+### 📥 Data Analysis
 
-- Create a function to validate the existence of cleaned data and aggregated data files in the path
-- Use Try-Except to run pipeline
-
-![validate](https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/validate.PNG)
-![pipelinerun](https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/pipelinerun.PNG)
+- Visualized insights using Power BI.
+- Created new measures, including Total Sales, Average Sales, Contribution Margin, and Contribution Margin Ratio.
+- Analyzed data using Key Influencers and Decomposition Tree Graph.
 
 <br>
 
-<a name="data-reporting"></a>
-### 📊 Data Reporting
-- Connect PowerBI with cleaned and aggregated data to perform analysis
-
-![salesreport](https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/WalmartSalesReport.PNG)
-
-
-<br>
 
 <a name="technology"></a>
 
 ### 🛠️ Technologies Used
 
-- **Data Source**: csv and parquet files
-- **Data Extraction**: Python Pandas Package
-- **Data Transformation**: Pandas DataFrame, Python programming
-- **Data Loading**: Python Pandas
-- **Data Visualization**: PowerBI
-- **Pipeline Testing**: Python Logging package
+- **Data Source**: Excel Tables
+- **Data Ingestion**: Power BI
+- **Data Transformation**: Power BI
+- **Data Analysis**: Power BI
+- **Data Visualization**: Powe BI
+
 
 <br>
 
