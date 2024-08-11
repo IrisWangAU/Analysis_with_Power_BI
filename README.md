@@ -90,18 +90,26 @@ The two tables are merged and manipulated. The transformed Dataset are stored as
 ## 🕵️ Key Insights
 
 - 💸 **Total Sales**
-  - The total revenue for KAT Insurance across all states amounts to 40.65 million in 2017.
-  - Among all the months, KAT has the highest revenue in August (3.49 million), followed by October (3.46 million) and December (3.42 million). There are three months fall behind the average monthly revenue (Feb:3.2 million, Sep: 3.26m and Apr: 3.33m)
-  - Among all the insurance type, the professional insurance reached the highest revenue (16.54m) which is 41% of the total revenue of KAT, followed by Auto Insurance (7.97m and 20%). The Life Insurance makes the least revenue in 2017 with only 2.89m, contributed to 7% of total revenue.
-  - After organizing the sales data across the 49 states in the USA, it emerged that New Jersey (NJ) topped the list, recording sales totaling $1,021,569.45. In contrast, Massachusetts (MA) logged the lowest sales for 2017, aggregating to $707,795.11.
-  - The average state sales is around 829K, with the top 5 states being NJ, NY, DC, OH and VA. In contrast, nine states falling short of the $775K benchmark, warranting immediate attention.
-  - 
- 
+  - In 2017, KAT Insurance generated a total revenue of $40.65 million across all states.
+  - August led the months with the highest revenue of $3.49 million, followed by October ($3.46 million) and December ($3.42 million). February, September, and April fell below the average monthly revenue, with $3.2 million, $3.26 million, and $3.33 million, respectively.
+  - Among insurance types, Professional Insurance generated the most revenue at $16.54 million (41% of total revenue), followed by Auto Insurance at $7.97 million (20%). Life Insurance contributed the least, with $2.89 million (7% of total revenue)
+  - New Jersey (NJ) recorded the highest sales at $1,021,569.45, while Massachusetts (MA) had the lowest at $707,795.11.
+  - The average state sales were around $829K. The top 5 states were NJ, NY, DC, OH, and VA, while nine states fell below the $775K benchmark, needing immediate attention.
+
+
 - 🕵️ **Contribution Margin (CM) and Contribution Margin Ratio (CMR)**
-  > The Contribution Margin shows the profit of sale by excluding variable cost from the revenu (Contribution Margin = Sales - Sales * Variable Cost Percent)
-  > The Contribution Margin Ratio shows the ability of the sale to convert investment to profit (CMR = CM / Sales)
-  - In 2017, the average CMR for each region and month is quite similar around 0.73, which indicates a healthy finance in terms of regions. The Northeast makes the most profit of 8.7 million.
-  - when looking at Insurance type, things are getting more interesting. Previously, we have Life Insurance making the least revuene during the year. However, it has reached the highest CMR of 0.89, showing that it is the most profitable insurance policy for KAT. Similarly, although Auto Insurance has reached the 2nd place in total sales, its low CMR of 0.52 indicating that only 52% of the sales are converted into profit.
+  > The Contribution Margin (CM) measures profit by subtracting variable costs from revenue (CM = Sales - Sales * Variable Cost Percent).
+  > The Contribution Margin Ratio (CMR) reflects how effectively sales convert to profit (CMR = CM / Sales).
+  - In 2017, the average CMR across regions and months was around 0.73, indicating healthy finances. The Northeast region led with a profit of $8.7 million.
+  - Life Insurance, despite generating the least revenue, had the highest CMR at 0.89, making it the most profitable policy for KAT. Conversely, Auto Insurance, with the second-highest sales, had a lower CMR of 0.52, indicating only 52% of sales converted to profit.
+
+
+
+- 🕵️ **Key Influencers for CM and CMR**
+  - Key factors increasing CM include Insurance Type, Salesperson, and Region. For example, Professional Insurance increased CM by an average of $652, Salesperson Matt by $101.9, and the Northeast region by $87.97. The Decomposition Tree confirmed that the highest CM in 2017 was from Matt selling Professional Insurance in the Northeast.
+  - Key influencers for CMR include Insurance Type and State. States like NM, IN, VA, ND, and SD, and insurance types like Life, Home, and Professional, significantly boosted CMR. The Decomposition Tree showed the most profitable sale was Life Insurance in Indiana.
+
+
 <br>
 
 <a name="project-architecture"></a>
