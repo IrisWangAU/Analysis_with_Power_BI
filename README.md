@@ -77,41 +77,31 @@ The two tables are merged and manipulated. The transformed Dataset are stored as
 - `"Contribution Margin"`
 - `"Contribution Margin Ratio"`
 
-After merging and cleaning the data, the monthly sales of Walmart are stored  as the `agg_data` variable that look like:
-
-|  Month | Weekly_Sales  | 
-|---|---|
-| 01  |  33174.178494 |
-|  02 |  34333.326579 |
-|  ... | ...  |  
-
-Finally, the `clean_data` and `agg_data` files are stored as csv files.
-
 <br>
 
 ### 🎯 Project Goals
 
-- Load data from Parquet and CSV files into DataFrame.
-- Transform the data into the desired clean format.
-- Calculate the average weekly sales by month.
-- Save the cleaned data into a CSV file.
-- Validate the existence of the final cleaned data in the CSV file.
-- Create a data visualization in Power BI.
+- analyse the total sales, profit and cost in 2017 by region, state and Insurance type to provide insights for revenue distribution
+- analysis for the key influencers for contribution margin and contribution margin ratio to provide insghts for financial performance
 
 <br>
 
 <a name="key-insights"></a>
 ## 🕵️ Key Insights
 
-- 💸 **Total Sales by Month**
-  - The total E-commerce revenue for Walmart across all files amounts to 3.63 billion.
-  - Among all the months, Walmart has the highest revenue in April (0.35 billion), followed by July (0.34 billion) and December (0.33 billion). January has the lowest revenue, at 0.17 billion
+- 💸 **Total Sales**
+  - The total revenue for KAT Insurance across all states amounts to 40.65 million in 2017.
+  - Among all the months, KAT has the highest revenue in August (3.49 million), followed by October (3.46 million) and December (3.42 million). There are three months fall behind the average monthly revenue (Feb:3.2 million, Sep: 3.26m and Apr: 3.33m)
+  - Among all the insurance type, the professional insurance reached the highest revenue (16.54m) which is 41% of the total revenue of KAT, followed by Auto Insurance (7.97m and 20%). The Life Insurance makes the least revenue in 2017 with only 2.89m, contributed to 7% of total revenue.
+  - After organizing the sales data across the 49 states in the USA, it emerged that New Jersey (NJ) topped the list, recording sales totaling $1,021,569.45. In contrast, Massachusetts (MA) logged the lowest sales for 2017, aggregating to $707,795.11.
+  - The average state sales is around 829K, with the top 5 states being NJ, NY, DC, OH and VA. In contrast, nine states falling short of the $775K benchmark, warranting immediate attention.
+  - 
  
-- 🌍 **Average Weekly Sales by Month**
-  - The average weekly sales are significantly impacted by holidays such as the Super Bowl, Labor Day, Thanksgiving, and Christmas.
-  - In December, Walmart experiences the highest weekly sales (over 38K), followed by November (over 36K).
-  > This trend can be attributed to increased consumer purchasing at Walmart in preparation for Christmas.
-
+- 🕵️ **Contribution Margin (CM) and Contribution Margin Ratio (CMR)**
+  > The Contribution Margin shows the profit of sale by excluding variable cost from the revenu (Contribution Margin = Sales - Sales * Variable Cost Percent)
+  > The Contribution Margin Ratio shows the ability of the sale to convert investment to profit (CMR = CM / Sales)
+  - In 2017, the average CMR for each region and month is quite similar around 0.73, which indicates a healthy finance in terms of regions. The Northeast makes the most profit of 8.7 million.
+  - when looking at Insurance type, things are getting more interesting. Previously, we have Life Insurance making the least revuene during the year. However, it has reached the highest CMR of 0.89, showing that it is the most profitable insurance policy for KAT. Similarly, although Auto Insurance has reached the 2nd place in total sales, its low CMR of 0.52 indicating that only 52% of the sales are converted into profit.
 <br>
 
 <a name="project-architecture"></a>
