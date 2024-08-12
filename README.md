@@ -1,4 +1,5 @@
 
+
 <div align="center">
   
   <div id="user-content-toc">
@@ -10,7 +11,7 @@
   <p> Analysis for financial health based on Contribution Margin Ratio across various regions and states in USA </p>
     
   <a href="#">
-    <img src="https://github.com/IrisWangAU/Retail_Data_Pipeline/blob/main/asset/walmartecomm.jpg" alt="Banner" width="720">
+    <img src="https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/Overview.PNG" alt="Banner" width="960">
   </a>
 </div>
 <br>
@@ -79,16 +80,19 @@ The `VariableCostPct` table contains variable cost percentage figures for each c
   - In 2017, KAT Insurance generated a total revenue of $40.65 million across all states.
   - August led the months with the highest revenue of $3.49 million, followed by October ($3.46 million) and December ($3.42 million). February, September, and April fell below the average monthly revenue, with $3.2 million, $3.26 million, and $3.33 million, respectively.
   
-  ![MonthlySales]()
+  ![MonthlySales](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/MonthlySales.PNG)
 
   - Among insurance types, Professional Insurance generated the most revenue at $16.54 million (41% of total revenue), followed by Auto Insurance at $7.97 million (20%). Life Insurance contributed the least, with $2.89 million (7% of total revenue)
   
-  ![InsuranceSales]()
+  ![InsuranceSales](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/SalesByInsuranceType.PNG)
 
   - New Jersey (NJ) recorded the highest sales at $1,021,569.45, while Massachusetts (MA) had the lowest at $707,795.11.
+
+  ![StateHL](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/StateHigh%26Low.PNG)
+ 
   - The average state sales were around $829K. The top 5 states were NJ, NY, DC, OH, and VA, while nine states fell below the $775K benchmark, needing immediate attention.
 
-   ![StateAnalysis]()
+   ![StateAnalysis](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/StateAnalysis.PNG)
 
 
 - 🕵️ **Contribution Margin (CM) and Contribution Margin Ratio (CMR)**
@@ -96,24 +100,27 @@ The `VariableCostPct` table contains variable cost percentage figures for each c
   > The Contribution Margin Ratio (CMR) reflects how effectively sales convert to profit (CMR = CM / Sales).
 
   - In 2017, the average CMR across regions and months was around 0.73, indicating healthy finances. The Northeast region led with a profit of $8.7 million.
-  
-  ![regionalCM]()
+
+  ![RegionalAnalysis](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/SaleByRegion.PNG)
+  ![RegionalAnalysis](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/MonthlyP%26C.PNG)
 
 
   - Life Insurance, despite generating the least revenue, had the highest CMR at 0.89, making it the most profitable policy for KAT. Conversely, Auto Insurance, with the second-highest sales, had a lower CMR of 0.52, indicating only 52% of sales converted to profit.
 
-   ![InsuranceType]()
+   ![InsuranceType](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/P%26CbyInsuranceType.PNG)
 
 
 
 - 🕵️ **Key Influencers for CM and CMR**
   - Key factors increasing CM include Insurance Type, Salesperson, and Region. For example, Professional Insurance increased CM by an average of $652, Salesperson Matt by $101.9, and the Northeast region by $87.97. The Decomposition Tree confirmed that the highest CM in 2017 was from Matt selling Professional Insurance in the Northeast.
   
-  ![CM]()
+  ![CM](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/KI_CM.PNG)
+  ![DT-CM](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/DT_CM.PNG)
   
   - Key influencers for CMR include Insurance Type and State. States like NM, IN, VA, ND, and SD, and insurance types like Life, Home, and Professional, significantly boosted CMR. The Decomposition Tree showed the most profitable sale was Life Insurance in Indiana.
   
-  ![CMR]()
+  ![CMR](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/KI_CMR.PNG)
+  ![DT-CMR](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/DT_CMR.PNG)
 
 
 <br>
@@ -140,7 +147,7 @@ The `VariableCostPct` table contains variable cost percentage figures for each c
 
 The two original tables were merged and manipulated. The transformed Dataset is stored as the `SalesMerged` table containing the following columns:
 
-![sampleCleanDataTable]()
+![sampleCleanDataTable](https://github.com/IrisWangAU/Analysis_with_Power_BI/blob/main/assets/MergeSample.PNG)
 
 <br>
 
